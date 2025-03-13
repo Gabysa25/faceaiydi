@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faceaiydi</title>
+    <title>Faceaiydi</title> <h1></h1>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/img/favicon.ico" type="image/png">
 </head>
 <body>
-    <div>Teachable Machine Image Model</div>
-<button type="button" onclick="init()">Start</button>
+
+<h1>TEACHABLE MACHINE IMAGE MODEL</h1>
+<div class="caja">
+<button type="button" onclick="init()">Start</button><H3>
+
 <div id="webcam-container"></div>
 <div id="label-container"></div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 <script type="text/javascript">
@@ -64,6 +69,11 @@
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
+
+            // lo nuevo
+            if (prediction[i].className === "Gabriela" && prediction[i].probability > 0.7) {
+                alert("Hola Gabriela");
+            }
         }
     }
 </script>
